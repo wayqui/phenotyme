@@ -5,7 +5,9 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.time.TimeAnnotations;
+import edu.stanford.nlp.time.Timex;
 import es.upm.nlp.corenlpapi.bean.NERBeanResponse;
+import es.upm.nlp.corenlpapi.bean.NERBeanTimex3;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,19 +30,21 @@ public class TextMiningController {
         CoreDocument doc = pipeline.processToCoreDocument(text);
         List<NERBeanResponse> results = new ArrayList<>();
         for (CoreEntityMention em : doc.entityMentions()) {
-            //sentence().entityMentions.get(0).entityMentionCoreMap.get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class)
-            System.out.println("temporal expression: "+em.text());
-            System.out.println("temporal value: " +
-                    em.coreMap().get(TimeAnnotations.TimexAnnotation.class));
 
+            Timex timex3 = em.coreMap().get(TimeAnnotations.TimexAnnotation.class);
+            String normalizedDate = em.coreMap().get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class);
 
-            NERBeanResponse nerBean = new NERBeanResponse();
-            nerBean.setText(em.text());
-            nerBean.setEntityType(em.entityType());
-            nerBean.setNormalizedDate(em.coreMap().get(CoreAnnotations.NormalizedNamedEntityTagAnnotation.class));
+            NERBeanResponse nerBean = NERBeanResponse.builder()
+                    .text(em.text())
+                    .entityType(em.entityType())
+                    .normalizedDate(normalizedDate)
+                    .timex3(NERBeanTimex3.builder()
+                            .tid(timex3 != null ? timex3.tid() : null)
+                            .value(timex3 != null ? timex3.value() : null)
+                            .type(timex3 != null ? timex3.timexType() : null)
+                            .xml(timex3 != null ? timex3.toString() : null).build()).build();
             results.add(nerBean);
         }
-
         return results;
     }
 }

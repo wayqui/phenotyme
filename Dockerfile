@@ -13,4 +13,4 @@ RUN mvn -Duser.home=/var/maven -Dmaven.repo.local=/var/maven/.m2 -f pom.xml inst
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/core-nlp-api-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Xmx1024m", "-Xms1024m", "-jar", "target/core-nlp-api-0.0.1-SNAPSHOT.jar"]
