@@ -1,0 +1,4 @@
+<root>
+<s>data line with the <ENAMEX TYPE="myentity">entity1</ENAMEX>to be trained</s>
+<s>with the <ENAMEX TYPE="myentity">entity2</ENAMEX>annotated</s>
+</root>

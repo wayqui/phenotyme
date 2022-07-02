@@ -8,6 +8,6 @@ import lombok.Data;
 public class NERBeanResponse {
     private String text;
     private String entityType;
-    private String normalizedDate;
+    private String normalizedValue;
     private NERBeanTimex3 timex3;
 }

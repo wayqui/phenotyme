@@ -2,6 +2,24 @@
 
 This is a microservice that performs NER using CoreNLP and SUTime in spanish. ITs aim is to identify and tag temporal expressions.
 
+## Corpus used
+
+Since this service deals with phenotypical and temporal information, there are 2 types of corpus that this service handles:
+
+### Spanish translatin of HPO corpus
+
+HPO (or The Human Phenotype Ontology) provides a standardized vocabulary of phenotypic abnormalities encountered in human diseases. 
+HPO currently contains over 13,000 terms and over 156,000 annotations to hereditary diseases. 
+
+Although this vocabulary is available in english only, there are initiatives to provide the translations in different languages such as [this one in Crowdin](https://crowdin.com/project/hpo-translation).
+
+For spanish, there is [this initiative](https://github.com/drseb/HPO-translations) that is trying to translate all HPO's labels, synonyms and textual definitions. 
+We have generated a set of rules from [this excel file](https://github.com/drseb/HPO-translations/blob/master/offline-translations/spanish/orig/HPO-Spanish.xlsx), being the result the file called __kbp_hpo_es_regexner_mapping.tag__ included in this repository.
+
+### HourGlass from Annotador
+
+## Pipeline
+
 ## Getting Started
 
 Since this Spring Boot service is containerized you should execute the following commands to run it
