@@ -1,4 +1,4 @@
-package es.upm.nlp.corenlpapi.hpo.lingpipe.dictionary;
+package es.upm.nlp.corenlpapi.hpo.model.testing.lingpipe.dictionary;
 
 import com.aliasi.chunk.Chunk;
 import com.aliasi.chunk.Chunking;

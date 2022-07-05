@@ -1,12 +1,10 @@
-package es.upm.nlp.corenlpapi.hpo.lingpipe.statistic;
+package es.upm.nlp.corenlpapi.hpo.model.testing.lingpipe.statistic;
 
 import com.aliasi.chunk.CharLmHmmChunker;
-import com.aliasi.chunk.Chunk;
 import com.aliasi.hmm.HmmCharLmEstimator;
 import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
 import com.aliasi.tokenizer.TokenizerFactory;
 import com.aliasi.util.AbstractExternalizable;
-import oracle.jrockit.jfr.parser.ChunkParser;
 
 import java.io.File;
 import java.io.IOException;

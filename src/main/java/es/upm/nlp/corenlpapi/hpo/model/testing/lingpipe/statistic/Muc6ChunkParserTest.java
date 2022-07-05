@@ -1,6 +1,5 @@
-package es.upm.nlp.corenlpapi.hpo.lingpipe.statistic;
+package es.upm.nlp.corenlpapi.hpo.model.testing.lingpipe.statistic;
 
-import com.aliasi.chunk.AbstractCharLmRescoringChunker;
 import com.aliasi.chunk.ChunkerEvaluator;
 import com.aliasi.chunk.HmmChunker;
 import com.aliasi.util.AbstractExternalizable;
