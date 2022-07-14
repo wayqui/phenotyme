@@ -7,6 +7,7 @@ import edu.stanford.nlp.time.TimeAnnotations;
 import edu.stanford.nlp.time.TimeAnnotator;
 import edu.stanford.nlp.time.TimeExpression;
 import edu.stanford.nlp.util.CoreMap;
+import oeg.tagger.core.time.tictag.AnnotadorStandard;
 
 import java.util.List;
 import java.util.Properties;
@@ -18,7 +19,7 @@ public class SUTimeDemo {
      *
      *  @param args Strings to interpret
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Properties props = new Properties();
         AnnotationPipeline pipeline = new AnnotationPipeline();
         pipeline.addAnnotator(new TokenizerAnnotator(false));
@@ -41,6 +42,11 @@ public class SUTimeDemo {
             }
             System.out.println("--");
         }
+    }*/
+    public static void main(String[] args) {
+        AnnotadorStandard upm_timex = new AnnotadorStandard("es");   // We initialize the tagger in Spanish
+        String res = upm_timex.annotate("15/01/2020, el 20 de enero, 20 de enero, 20 enero", "2020-02-22");
+        System.out.println("TEST I:\nTIMEX RESULT:\n" + res);
     }
 
 }

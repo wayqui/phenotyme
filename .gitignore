@@ -35,3 +35,4 @@ build/
 
 ### Mac Related ###
 .DS_Store
+/libs/

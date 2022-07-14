@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.upm.nlp</groupId>
-	<artifactId>core-nlp-api</artifactId>
+	<artifactId>phenotyme</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CoreNLP Api</name>
+	<name>PhenoTyme Api</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>8</java.version>
@@ -31,18 +31,18 @@
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
 			<artifactId>stanford-corenlp</artifactId>
-			<version>4.4.0</version>
+			<version>3.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
 			<artifactId>stanford-corenlp</artifactId>
-			<version>4.4.0</version>
+			<version>3.9.1</version>
 			<classifier>models</classifier>
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
 			<artifactId>stanford-corenlp</artifactId>
-			<version>4.4.0</version>
+			<version>3.9.1</version>
 			<classifier>models-spanish</classifier>
 		</dependency>
 		<dependency>

@@ -1,6 +1,6 @@
-# CoreNLP API
+# PhenoTyme
 
-This is a microservice that performs NER using CoreNLP and SUTime in spanish. ITs aim is to identify and tag temporal expressions.
+PhenoTyme - An acronym from PHENOtypic and TYME ;-) - is a microservice that performs NER using CoreNLP and SUTime in spanish. ITs aim is to identify and tag temporal and phenotypical expressions using [Añotator](https://github.com/mnavasloro/Annotador) and the [Translated rules from HPO](https://github.com/drseb/HPO-translations) respectively.
 
 ## Corpus used
 
@@ -32,13 +32,13 @@ After that we need to manually include the dependency in our project.
 Since this Spring Boot service is containerized you should execute the following commands to run it
 
 ```
-docker build -t core-nlp-api .
+docker build -t phenotyme .
 ```
 
 To run the image just execute
 
 ```
-docker run -it -p 8080:8080 core-nlp-api
+docker run -it -p 8080:8080 phenotyme
 ```
 
 ## Run some requests

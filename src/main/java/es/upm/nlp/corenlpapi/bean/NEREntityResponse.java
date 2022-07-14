@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class NERBeanResponse {
+public class NEREntityResponse {
     private String text;
     private String entityType;
     private String normalizedValue;
